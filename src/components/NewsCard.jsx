@@ -1,6 +1,7 @@
 import { CiBookmark, CiShare2 } from "react-icons/ci";
-import star from "../assets/star.png"
+import star from "../assets/star.png";
 import { FaEye } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({ singleNews }) => {
   // console.log(singleNews)
@@ -32,12 +33,12 @@ const NewsCard = ({ singleNews }) => {
       </div>
 
       <div className="p-4">
-        <h2 className="text-xl font-bold">
-          {singleNews.title}
-        </h2>
+        <h2 className="text-xl font-bold">{singleNews.title}</h2>
         <img className="my-4 w-full" src={singleNews.image_url} alt="" />
-        <p className="line-clamp-4 text-gray-500 text-md">{singleNews.details}</p>
-        <span className="font-semibold text-[#ffb084]">Read More</span>
+        <p className=" text-gray-500 text-md">
+          {singleNews.details.slice(0, 150)}...
+        </p>
+        <Link to={`/news/${singleNews._id}`} className="font-semibold text-[#ffb084]">Read More</Link>
         <hr className="text-gray-300 my-4" />
         <div className="mt-4 flex justify-between items-center">
           <div className="flex gap-2 items-center">

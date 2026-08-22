@@ -8,7 +8,7 @@ const CategoryNews = () => {
   const spinner = useNavigation();
   if (spinner.state === "loading") {
     return (
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center min-h-screen">
         <PacmanLoader size={50} color="red"></PacmanLoader>
       </div>
     );
